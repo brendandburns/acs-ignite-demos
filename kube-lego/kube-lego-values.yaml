@@ -1,0 +1,3 @@
+config:
+  LEGO_EMAIL: brendan.d.burns@gmail.com
+  LEGO_URL: https://acme-v01.api.letsencrypt.org/directory
