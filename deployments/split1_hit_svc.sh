@@ -15,7 +15,11 @@
 
 . $(dirname ${BASH_SOURCE})/../util.sh
 
-export HTTP=`yq .clusters[].cluster.server ~/.kube/config | grep ignite`
+cluster=$(yq ".contexts[] | select(.name == \"$(kubectl config current-context)\") | .context.cluster" ~/.kube/config)
+server=$(yq ".clusters[] | select(.name == \"$(kubectl config current-context)\") | .cluster.server" ~/.kube/config)
+
+# export HTTP=`yq .clusters[].cluster.server ~/.kube/config | grep ignite`
+HTTP=${server}
 HTTP=${HTTP//\"}
 export MASTER=${HTTP:8}
 
