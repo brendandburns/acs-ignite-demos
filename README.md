@@ -26,3 +26,10 @@ Install some binaries:
 
 # Verify
 Run `./verify.sh` to verify your environment looks ok.
+
+# Running
+For a particular demo:
+  * `cd ${demo-dir}`
+  * `./demo.sh`
+
+For the most part the demos clean up after themselves, but you may want to delete any stray namespaces you see at the end.
