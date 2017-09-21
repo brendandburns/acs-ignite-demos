@@ -10,12 +10,14 @@ run "kubectl get functions"
 
 run "cat simple.py"
 
-run "kubeless function deploy get-python --runtime python2.7 --handler test.foobar --from-file simple.py --trigger-http"
+run "kubeless function deploy get-python --runtime python2.7 --handler test.simple --from-file simple.py --trigger-http"
 
 run "kubectl get functions"
 
-run "kubeless function call get-python --data '{\"echo\": \"echo echo\"}'"
+run "kubeless function call get-python --data '{\"name\": \"ignite-demo\"}'"
 
 run "kubeless function delete get-python"
 
 run "kubectl delete namespace kubeless"
+
+kubectl delete thirdpartyresources function.k8s.io

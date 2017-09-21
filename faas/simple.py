@@ -1,3 +1,3 @@
-def foobar(context):
+def simple(context):
    print context.json
-   return context.json
+   return {'msg': 'Hello %s' % context.json['name']} 
