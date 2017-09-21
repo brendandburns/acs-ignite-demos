@@ -1,0 +1,8 @@
+apiVersion: "etcd.coreos.com/v1beta1"
+kind: "Cluster"
+metadata:
+  name: "example-etcd-cluster"
+  namespace: operator-demo
+spec:
+  size: 5
+  version: "3.1.0"
