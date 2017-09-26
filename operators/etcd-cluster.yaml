@@ -4,5 +4,5 @@ metadata:
   name: "example-etcd-cluster"
   namespace: operator-demo
 spec:
-  size: 5
+  size: 3
   version: "3.1.0"

@@ -15,6 +15,8 @@
 
 . $(dirname ${BASH_SOURCE})/../util.sh
 
+run "clear"
+
 kubectl create namespace demos > /dev/null || true
 
 desc "Create a service that fronts any version of this demo"

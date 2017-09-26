@@ -2,6 +2,8 @@
 
 . ../util.sh
 
+run "clear"
+
 desc "Part #1: Create a simple namespace"
 statefile=simple/terraform.tfstate
 

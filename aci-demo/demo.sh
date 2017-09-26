@@ -5,6 +5,8 @@
 repo=brendanburns
 image=${repo}/ignite-node
 
+run "clear"
+
 desc "Build a simple NodeJS Container"
 run "cat index.js"
 

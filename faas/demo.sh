@@ -2,6 +2,8 @@
 
 . ../util.sh
 
+run "clear"
+
 run "kubectl create ns kubeless"
 
 run "curl -sL https://github.com/kubeless/kubeless/releases/download/v0.1.0/kubeless-v0.1.0.yaml | kubectl create -f -"

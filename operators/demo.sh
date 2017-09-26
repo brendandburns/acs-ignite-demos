@@ -2,19 +2,21 @@
 
 . ../util.sh
 
-run "cat etcd-operator.yaml"
+#run "clear"
 
-run "kubectl create -f etcd-operator.yaml"
+#run "cat etcd-operator.yaml"
 
-run "kubectl --namespace operator-demo get pods"
+#run "kubectl create -f etcd-operator.yaml"
 
-run "kubectl get thirdpartyresources"
+#run "kubectl --namespace operator-demo get pods"
 
-run "cat etcd-cluster.yaml"
+#run "kubectl get thirdpartyresources"
 
-run "kubectl create -f etcd-cluster.yaml"
+#run "cat etcd-cluster.yaml"
 
-tmux new -d -s my-session \
+#run "kubectl create -f etcd-cluster.yaml"
+
+tmux new -d -s my-session-2 \
     "$(dirname $BASH_SOURCE)/split_watch_etcd.sh" \; \
     split-window -v -p 66 "$(dirname ${BASH_SOURCE})/split_update_etcd.sh" \; \
     attach
