@@ -7,5 +7,5 @@ variable "namespace" {
 }
 
 variable "replicas" {
-  default = 3
+  default = 1 
 }

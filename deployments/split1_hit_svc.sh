@@ -15,19 +15,7 @@
 
 . $(dirname ${BASH_SOURCE})/../util.sh
 
-cluster=$(yq ".contexts[] | select(.name == \"$(kubectl config current-context)\") | .context.cluster" ~/.kube/config)
-server=$(yq ".clusters[] | select(.name == \"$(kubectl config current-context)\") | .cluster.server" ~/.kube/config)
-
-# export HTTP=`yq .clusters[].cluster.server ~/.kube/config | grep ignite`
-HTTP=${server}
-HTTP=${HTTP//\"}
-export MASTER=${HTTP:8}
-
 IP=$(kubectl --namespace=demos get svc deployment-demo \
         -o go-template='{{.spec.clusterIP}}')
 
-run "ssh -o StrictHostKeyChecking=no azureuser@${MASTER} '\
-    while true; do \
-        curl --connect-timeout 1 -s $IP; \
-        sleep 0.5; \
-    done'"
+run "kubectl --namespace=demos run -it busybox-replicas --rm --image=busybox -- sh -c \"while true; do wget -O- -q $IP; sleep 1; done\""

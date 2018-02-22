@@ -7,14 +7,14 @@ image=${repo}/ignite-node
 
 run "clear"
 
-desc "Build a simple NodeJS Container"
-run "cat index.js"
+#desc "Build a simple NodeJS Container"
+#run "cat index.js"
 
-run "cat Dockerfile"
+#run "cat Dockerfile"
 
-run "docker build -t ${image} ."
+#run "docker build -t ${image} ."
 
-run "docker push ${image}"
+#run "docker push ${image}"
 
 desc "Deploy it to Azure Container Instances"
 

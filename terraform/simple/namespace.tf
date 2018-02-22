@@ -1,5 +1,5 @@
 provider "kubernetes" {
-  config_context_cluster   = "bburns-ign-bburns-ignite-c10894mgmt"
+  config_context_cluster   = "demo-k8s-bburns-demo-c10894mgmt"
 }
 
 resource "kubernetes_namespace" "example" {

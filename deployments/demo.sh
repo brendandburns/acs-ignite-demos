@@ -31,7 +31,7 @@ run "kubectl --namespace=demos apply -f $(relative deployment.yaml)"
 # desc "Check it"
 # run "kubectl --namespace=demos describe deployment deployment-demo"
 
-tmux new -d -s my-session \
+tmux new -d -s my-deploy-session \
     "$(dirname $BASH_SOURCE)/split1_control.sh" \; \
     split-window -v -p 66 "$(dirname ${BASH_SOURCE})/split1_hit_svc.sh" \; \
     split-window -v "$(dirname ${BASH_SOURCE})/split1_watch.sh v1" \; \

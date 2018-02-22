@@ -37,7 +37,7 @@ run "kubectl --namespace terraform-demo get pods"
 
 run "kubectl --namespace terraform-demo get services"
 
-tmux new -d -s my-session \
+tmux new -d -s my-session-tf \
     "$(dirname $BASH_SOURCE)/split_hit_svc.sh" \; \
     split-window -v -p 66 "$(dirname ${BASH_SOURCE})/split_update_svc.sh" \; \
     attach

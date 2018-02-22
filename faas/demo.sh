@@ -4,6 +4,8 @@
 
 run "clear"
 
+run "kubectl get functions"
+
 run "kubectl create ns kubeless"
 
 run "curl -sL https://github.com/kubeless/kubeless/releases/download/v0.1.0/kubeless-v0.1.0.yaml | kubectl create -f -"
@@ -16,7 +18,7 @@ run "kubeless function deploy get-python --runtime python2.7 --handler test.simp
 
 run "kubectl get functions"
 
-run "kubeless function call get-python --data '{\"name\": \"ignite-demo\"}'"
+run "kubeless function call get-python --data '{\"name\": \"nordic-leap-demo\"}'"
 
 run "kubeless function delete get-python"
 
